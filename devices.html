@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Devices - XYZ Smart Home</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Switch -->
+  <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- Source Sans Pro font -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic,300,300italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">XYZ Smart Home</a>
+      </div>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="index.html"><i class="fa fa-fw fa-home"></i>Dashboard</a></li>
+        <li class="active"><a href="#/"><i class="fa fa-fw fa-plug"></i>Devices</a></li>
+        <li><a href="#/"><i class="fa fa-fw fa-calendar"></i>Schedule</a></li>
+        <li><a href="#/"><i class="fa fa-fw fa-line-chart"></i>Analytics</a></li>
+        <li><a href="#/"><i class="fa fa-fw fa-cog"></i>Settings</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#/" class="dropdown-toggle profile-tab" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img class="profile-image" src="img/avatar.png">Sam Baker <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#/">Profile</a></li>
+            <li><a href="#/">Account</a></li>
+            <li><a href="#/">Support</a></li>
+            <li class="divider"></li>
+            <li><a href="#/">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <div class="page-header">
+      <div class="container">
+        <h1>Devices</h1>
+        <button type="button" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Add Device</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="device-toggle">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default active" data-tab="room-list">Room</button>
+              <button type="button" class="btn btn-default" data-tab="type-list">Type</button>
+            </div>
+          </div>
+          <div id="room-list" class="list-group device-filters">
+            <a href="#/" class="list-group-item active" data-tab="all"><i class="fa fa-fw fa-list-ul"></i> All Rooms <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="bedroom"><i class="fa fa-fw fa-bed"></i> Bedroom <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="entrance"><i class="fa fa-fw fa-sign-in"></i> Entrance <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="kitchen"><i class="fa fa-fw fa-cutlery"></i> Kitchen <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="living-room"><i class="fa fa-fw fa-television"></i> Living Room <span class="badge">0</span></a>
+          </div>
+          <div id="type-list" class="list-group device-filters" style="display: none;">
+            <a href="#/" class="list-group-item" data-tab="all"><i class="fa fa-fw fa-list-ul"></i> All Types <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="alarm"><i class="fa fa-fw fa-bell"></i> Alarms <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="camera"><i class="fa fa-fw fa-video-camera"></i> Cameras <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="climate"><i class="fa fa-fw fa-signal"></i> Climate <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="light"><i class="fa fa-fw fa-lightbulb-o"></i> Lighting <span class="badge">0</span></a>
+            <a href="#/" class="list-group-item" data-tab="lock"><i class="fa fa-fw fa-lock"></i> Locks <span class="badge">0</span></a>
+          </div>
+        </div>
+        <div class="col-md-9 content">
+          <div class="device-toolbar">
+            <h4>All Devices</h4>
+            <div class="pull-right">
+              <input type="text" class="form-control" placeholder="Search devices&hellip;">
+            </div>
+          </div>
+          <div class="devices">
+            <a href="#/" data-room="bedroom" data-type="light">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lightbulb-o"></i>
+              </div>
+              <div class="device-name">
+                <h4>Bedroom Lights</h4>
+                <p>Philips Smart Light</p>
+              </div>
+              <div class="device-room">
+                Bedroom
+              </div>
+              <div class="device-type">
+                Light
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-toggle="modal" data-room="entrance" data-type="camera" data-target="#entryCameraModal">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-camera"></i>
+              </div>
+              <div class="device-name">
+                <h4>Entry Camera</h4>
+                <p>XYZ Camera</p>
+              </div>
+              <div class="device-room">
+                Entrance
+              </div>
+              <div class="device-type">
+                Security Camera
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="entry-camera-switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-toggle="modal" data-room="entrance" data-type="lock" data-target="#lockModal">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lock"></i>
+              </div>
+              <div class="device-name">
+                <h4>Front door</h4>
+                <p>August SmartLock</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Lock
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="lock-switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="living-room" data-type="climate">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-signal"></i>
+              </div>
+              <div class="device-name">
+                <h4>Heat Pump</h4>
+                <p>Fujitsu X100</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Climate
+              </div>
+              <div class="device-actions">
+              </div>
+            </a>
+            <a href="#/" data-toggle="modal" data-room="kitchen" data-type="camera" data-target="#kitchenCameraModal">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-camera"></i>
+              </div>
+              <div class="device-name">
+                <h4>Kitchen Camera</h4>
+                <p>XYZ Camera</p>
+              </div>
+              <div class="device-room">
+                Kitchen
+              </div>
+              <div class="device-type">
+                Security Camera
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="kitchen-camera-switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="kitchen" data-type="light">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lightbulb-o"></i>
+              </div>
+              <div class="device-name">
+                <h4>Kitchen Lights</h4>
+                <p>Philips Smart Light</p>
+              </div>
+              <div class="device-room">
+                Kitchen
+              </div>
+              <div class="device-type">
+                Light
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-toggle="modal" data-room="living-room" data-type="camera" data-target="#loungeCameraModal">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-camera"></i>
+              </div>
+              <div class="device-name">
+                <h4>Lounge Camera</h4>
+                <p>XYZ Camera</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Security Camera
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="lounge-camera-switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="living-room" data-type="light">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lightbulb-o"></i>
+              </div>
+              <div class="device-name">
+                <h4>Lounge Lights 1</h4>
+                <p>Philips Smart Light</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Light
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="living-room" data-type="light">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lightbulb-o"></i>
+              </div>
+              <div class="device-name">
+                <h4>Lounge Lights 2</h4>
+                <p>Philips Smart Light</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Light
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="living-room" data-type="alarm">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-bell"></i>
+              </div>
+              <div class="device-name">
+                <h4>Main Alarm</h4>
+                <p>XYZ Alarm</p>
+              </div>
+              <div class="device-room">
+                Living Room
+              </div>
+              <div class="device-type">
+                Security Alarm
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+            <a href="#/" data-room="entrance" data-type="light">
+              <div class="device-icon">
+                <i class="fa fa-fw fa-lightbulb-o"></i>
+              </div>
+              <div class="device-name">
+                <h4>Security Light</h4>
+                <p>Philips Smart Light</p>
+              </div>
+              <div class="device-room">
+                Entrance
+              </div>
+              <div class="device-type">
+                Light
+              </div>
+              <div class="device-actions">
+                <input type="checkbox" name="switch" checked>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">Copyright &copy; 2016 XYZ Ltd.</div>
+          <div class="col-md-6">
+            <ul>
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="#/">Devices</a></li>
+              <li><a href="#/">Schedule</a></li>
+              <li><a href="#/">Analytics</a></li>
+              <li><a href="#/">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Front Door Lock modal -->
+  <div class="modal fade" id="lockModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Front Door</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Actions</h4>
+              <p><input type="checkbox" name="lock-switch" checked></p>
+              <p><a class="btn btn-default" href="#/" data-toggle="collapse" data-target="#changePasscode">Change Passcode</a></p>
+              <div id="changePasscode" class="collapse">
+                <div class="well">
+                  <h4>Change Passcode</h4>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="currentCode" placeholder="Current Code">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="newCode" placeholder="New Code">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="confirmCode" placeholder="Confirm New Code">
+                  </div>
+                  <button type="button" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Recent Activity</h4>
+              <ul class="activity">
+                <li><strong>Door unlocked</strong><span>Yesterday, 6:23 PM</span></li>
+                <li><strong>Door unlocked</strong><span>Yesterday, 5:07 PM</span></li>
+                <li><strong>Door locked</strong><span>Yesterday, 7:21 AM</span></li>
+                <li><strong>Door unlocked</strong><span>Thursday, 7:36 PM</span></li>
+              </ul>
+              <p><a href="#/" class="btn btn-sm btn-default">Load more</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entry Camera modal -->
+  <div class="modal fade" id="entryCameraModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Entry Camera</h4>
+        </div>
+        <div class="modal-body">
+          <div class="thumbnail">
+            <div class="video-feed">
+              <img class="img-responsive entry-workman" src="img/front-door-workman.jpg">
+              <img class="img-responsive entry" src="img/front-door.jpg" style="display: none;">
+              <div class="play-button"><i class="fa fa-play-circle"></i></div>
+              <div class="overlay" style="display: none;"></div>
+            </div>
+          </div>
+          <h4>Actions</h4>
+          <p><input class="camera-switch" type="checkbox" name="entry-camera-switch" checked></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lounge Camera modal -->
+  <div class="modal fade" id="loungeCameraModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Lounge Camera</h4>
+        </div>
+        <div class="modal-body">
+          <div class="thumbnail">
+            <div class="video-feed">
+              <img class="img-responsive" src="img/lounge.jpg">
+              <div class="play-button"><i class="fa fa-play-circle"></i></div>
+              <div class="overlay" style="display: none;"></div>
+            </div>
+          </div>
+          <h4>Actions</h4>
+          <p><input class="camera-switch" type="checkbox" name="lounge-camera-switch" checked></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kitchen Camera modal -->
+  <div class="modal fade" id="kitchenCameraModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Kitchen Camera</h4>
+        </div>
+        <div class="modal-body">
+          <div class="thumbnail">
+            <div class="video-feed">
+              <img class="img-responsive kitchen" src="img/kitchen.jpg">
+              <img class="img-responsive kitchen-workman" src="img/kitchen-workman.jpg" style="display: none;">
+              <div class="play-button"><i class="fa fa-play-circle"></i></div>
+              <div class="overlay" style="display: none;"></div>
+            </div>
+          </div>
+          <h4>Actions</h4>
+          <p><input class="camera-switch" type="checkbox" name="kitchen-camera-switch" checked></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap Switch -->
+  <script src="js/bootstrap-switch.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+/* General */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#main {
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+
+body {
+  background: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  margin-bottom: 70px;
+}
+
+/* Color */
+h1, h2, h3, h3, h4, h5, h6 {
+  color: #323C4B;
+}
+
+a {
+  color: rgb(0, 150, 140);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: rgb(0, 51, 48);
+}
+
+.form-control:focus,
+.bootstrap-switch.bootstrap-switch-focused {
+  border-color: #00968C;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 150, 140,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 150, 140,.6);
+}
+
+.btn-primary {
+  background-color: rgb(0, 150, 140);
+  border-color: rgb(0, 138, 129);
+}
+
+.btn-primary:hover {
+  background-color: rgb(0, 128, 119);
+  border-color: rgb(0, 117, 109);
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary,
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+  background-color: rgb(0, 128, 119);
+  border-color: rgb(0, 117, 109);
+}
+
+.btn-default:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+.btn-default.focus, .btn-default:focus, .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default,
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  background-color: #F0F2F5!important;
+}
+
+/* Top navbar */
+nav.navbar-inverse {
+  background-color: rgb(50, 60, 75);
+  border-width: 0;
+}
+
+nav.navbar-inverse .navbar-nav>li>a {
+  color: #d7d7d7;
+}
+
+nav.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+nav.navbar-inverse .navbar-nav>.active>a, nav.navbar-inverse .navbar-nav>.active>a:focus, nav.navbar-inverse .navbar-nav>.active>a:hover,
+nav.navbar-inverse .navbar-nav>.open>a, nav.navbar-inverse .navbar-nav>.open>a:focus, nav.navbar-inverse .navbar-nav>.open>a:hover {
+  background: rgb(82, 98, 122);
+}
+
+nav .fa {
+  margin-right: 8px;
+}
+
+nav .profile-tab {
+  padding-left: 50px!important;
+}
+
+nav .profile-image {
+  max-width: 25px!important;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+/* Page */
+.page-header {
+  padding-bottom: 9px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  background: #F0F2F5;
+}
+
+.page-header h1 {
+  float: left;
+}
+
+.page-header .btn {
+  float: right;
+  margin-top: 24px;
+}
+
+.footer {
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  background: #F0F2F5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+}
+
+.footer ul {
+  text-align: right;
+  float: right;
+  margin-bottom: 0;
+}
+
+.footer ul li {
+  float: left;
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+/* Device filters */
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: rgba(0,150,140,1);
+  border-color: rgba(0,150,140,1);
+}
+
+.list-group-item.active>.badge, .nav-pills>.active>a>.badge {
+  color: rgba(0,150,140,1);
+}
+
+/* Device toggle */
+.device-toggle .btn-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.device-toggle .btn {
+  width: 50%;
+}
+
+.device-toggle .btn:focus {
+  outline: none;
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+
+.device-filters .fa {
+  margin-right: 8px;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+  background-color: #F0F2F5;
+}
+
+/* Device toolbar */
+.device-toolbar {
+  margin-bottom: 15px;
+}
+
+.device-toolbar h4 {
+  display: inline;
+  margin: 0;
+  line-height: 34px;
+}
+
+/* Dashboard */
+.temp {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.temp h3 {
+  margin: 0;
+}
+
+.temp span {
+  text-transform: uppercase;;
+}
+
+.panel-default>.panel-heading {
+  background-color: #F0F2F5;
+}
+
+/* Device list */
+.devices {
+  margin-bottom: 20px;
+}
+
+.devices a {
+  display: table;
+  width: 100%;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+}
+
+.devices a:hover, .devices a:focus {
+  background: rgb(249, 250, 251);
+  color: #555;
+  text-decoration: none;
+}
+
+.device-name, .device-actions, .device-room, .device-type {
+  display: table-cell;
+  vertical-align: middle;
+  width: 25%;
+}
+
+.device-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 5%;
+  padding-left: 2px;
+}
+
+.device-icon .fa {
+  font-size: 20px;
+}
+
+.device-name h4 {
+  margin: 0 0 4px;
+}
+
+.device-name p {
+  margin-bottom: 0;
+}
+
+.device-actions {
+  width: 20%;
+  text-align: right;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  background: #009688;
+}
+
+/* Device modal */
+#changePasscode h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.activity {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.activity li {
+  padding: 15px 0;
+  border-bottom: 1px dotted #e7e7e7;
+}
+
+.activity li:first-child {
+  border-top: 1px dotted #e7e7e7;
+}
+
+.activity li span {
+  float: right;
+  color: #666;
+}
+
+.activity li strong {
+  font-weight: 600;
+}
+
+/* Camera modal */
+.video-feed {
+  position: relative;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: block;
+  z-index:0;
+  background-color: rgba(0,0,0,1);
+}
+
+.play-button:before {
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: block;
+  z-index:0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.play-button i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  top: 34%;
+  font-size: 100px;
+  color: #fff;
+}
